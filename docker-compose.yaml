@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  waitserver:
+    image: ghcr.io/100days/waitserver
+    init: true
+    ports:
+      - "3000:3000"
+    environment:
+      THROTTLE_LIMIT: 20            # max concurrent processes
+      THROTTLE_BACKLOG_LIMIT: 50    # number of elements in backlog
+      THROTTLE_BACKLOG_TIMEOUT: 100 # sekunden
