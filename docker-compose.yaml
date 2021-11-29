@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   waitserver:
-    image: ghcr.io/100days/waitserver
+    image: ghcr.io/100days/waitserver:main
     init: true
     ports:
       - "3000:3000"
