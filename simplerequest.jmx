@@ -18,7 +18,7 @@
           <stringProp name="LoopController.loops">20</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">500</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">10</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">500</stringProp>
         <longProp name="ThreadGroup.start_time">1638180460000</longProp>
         <longProp name="ThreadGroup.end_time">1638180460000</longProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
@@ -38,7 +38,7 @@
               </elementProp>
               <elementProp name="max" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">20</stringProp>
+                <stringProp name="Argument.value">2</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">max</stringProp>
@@ -74,7 +74,7 @@
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">20</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">5</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <longProp name="ThreadGroup.start_time">1638207457000</longProp>
         <longProp name="ThreadGroup.end_time">1638207457000</longProp>
@@ -86,19 +86,12 @@
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="mailing-requests" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
-              <elementProp name="min" elementType="HTTPArgument">
+              <elementProp name="time" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">10</stringProp>
+                <stringProp name="Argument.value">30</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                <stringProp name="Argument.name">min</stringProp>
-              </elementProp>
-              <elementProp name="max" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">50</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-                <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                <stringProp name="Argument.name">max</stringProp>
+                <stringProp name="Argument.name">time</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
@@ -119,7 +112,7 @@
         </HTTPSamplerProxy>
         <hashTree>
           <GaussianRandomTimer guiclass="GaussianRandomTimerGui" testclass="GaussianRandomTimer" testname="Gaussian Random Timer" enabled="true">
-            <stringProp name="ConstantTimer.delay">3000</stringProp>
+            <stringProp name="ConstantTimer.delay">10000</stringProp>
             <stringProp name="RandomTimer.range">1000.0</stringProp>
           </GaussianRandomTimer>
           <hashTree/>
@@ -224,6 +217,7 @@
         <stringProp name="filename"></stringProp>
         <stringProp name="RespTimeGraph.seriesselectionmatchlabel">.*PS.*</stringProp>
         <intProp name="RespTimeGraph.legendplacement">1</intProp>
+        <boolProp name="ResultCollector.success_only_logging">true</boolProp>
       </ResultCollector>
       <hashTree/>
     </hashTree>
